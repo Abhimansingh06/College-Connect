@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11100d"><title>Admin pane — AchieveX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><img src="assets/achievex-logo.png" alt="Silicon Achievers Club crest"><span>ACHIEVE<span class="gold">X</span><small>SILICON ACHIEVERS’ CLUB</small></span></a><div class="admin-header-actions"><a class="nav-cta" href="index.html#leaderboard">View leaderboard <span>↗</span></a><button id="logout-button" class="nav-cta logout-button" type="button" hidden>Log out</button></div></header>
+  <main class="admin-main">
+    <section id="login-panel" class="admin-card login-card" aria-labelledby="login-title">
+      <div class="eyebrow">SILICON ACHIEVERS’ CLUB / ADMIN LOGIN</div><h1 id="login-title">Admin <em>access.</em></h1>
+      <p>Sign in with the administrator password to manage the participant roster and weekly points.</p>
+      <form id="login-form" class="login-form"><label for="admin-password">Administrator password</label><input id="admin-password" name="password" type="password" autocomplete="current-password" required><button class="button button-gold" type="submit">Sign in <span>↗</span></button></form>
+      <div id="login-message" class="login-message" role="alert"></div>
+      <small class="login-help">The server owner must configure the admin password before sign-in is available.</small>
+    </section>
+    <div id="admin-workspace" hidden>
+    <div class="admin-heading"><div><div class="eyebrow">SILICON ACHIEVERS’ CLUB / ADMIN</div><h1>Run the <em>round.</em></h1><p>Add registered participants, then enter their points at the end of each week.</p></div><div class="admin-mark">✳</div></div>
+    <div class="storage-alert"><b>Admin session active</b><span>Roster and scores are stored by the server and shared with leaderboard visitors. Export a backup regularly.</span></div>
+
+    <section class="admin-card" aria-labelledby="add-title"><div class="card-title"><div><div class="eyebrow">01 / REGISTRATION</div><h2 id="add-title">Add a participant</h2></div><span class="card-icon">＋</span></div>
+      <form id="participant-form" class="participant-form">
+        <label>Student name<input name="name" required maxlength="80" placeholder="e.g. Aanya Sharma"></label>
+        <label>Student ID <small>optional</small><input name="studentId" maxlength="40" placeholder="Registration or roll number"></label>
+        <label>Academic year<select name="year" required><option value="Year 1">Year 1</option><option value="Year 2">Year 2</option><option value="Year 3">Year 3</option><option value="Year 4">Year 4</option></select></label>
+        <label>Category<input id="form-category" value="Junior (Year 1)" readonly></label>
+        <label>Track<select id="participant-track" name="track" required><option value="all">All</option></select></label>
+        <button class="button button-gold add-button" type="submit">Add participant <span>↗</span></button>
+      </form><div class="form-message" id="form-message" aria-live="polite"></div>
+    </section>
+
+    <section class="admin-card score-card" aria-labelledby="scores-title"><div class="card-title"><div><div class="eyebrow">02 / WEEKLY SCORES</div><h2 id="scores-title">Update points</h2></div><label class="week-picker">EDITING<select id="admin-week"><option value="0">Week 01</option><option value="1">Week 02</option><option value="2">Week 03</option><option value="3">Week 04</option><option value="4">Week 05</option></select></label></div>
+      <div class="score-toolbar"><span id="participant-count">0 participants</span><div><button id="export-button" class="small-button" type="button">↓ Export backup</button><label class="small-button import-button">↑ Import backup<input id="import-input" type="file" accept="application/json,.json"></label></div></div>
+      <div class="table-wrap"><table class="admin-table"><thead><tr><th>PARTICIPANT</th><th>STUDENT ID</th><th>CATEGORY · TRACK</th><th>WEEKLY POINTS</th><th></th></tr></thead><tbody id="admin-rows"></tbody></table></div>
+      <div class="save-row"><span id="save-status" aria-live="polite">Scores are saved in this browser.</span><button id="save-scores" class="button button-gold" type="button">Save week’s points <span>↗</span></button></div>
+    </section>
+    <div class="admin-bottom"><span>Keep a backup after making changes.</span><a href="index.html">← Return to AchieveX</a></div>
+    </div>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

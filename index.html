@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f0ff"><meta name="description" content="Sign in to College Connect for mentorship, campus community, and opportunities.">
+  <title>Sign in · College Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="welcome-panel" aria-label="About College Connect">
+      <a class="auth-brand" href="index.html" aria-label="College Connect"><span class="cap-icon" aria-hidden="true"><svg viewBox="0 0 52 42" fill="none"><path d="M2 14 26 3l24 11-24 11L2 14Z" fill="currentColor"/><path d="M11 19v11c8 8 22 8 30 0V19L26 28 11 19Z" fill="currentColor"/><path d="M48 16v13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="48" cy="32" r="3" fill="currentColor"/></svg></span><span class="brand-name">College <b>Connect</b></span></a>
+      <p class="welcome-tagline">Senior, Junior & Alumni Networking System</p>
+
+      <div class="student-art" aria-hidden="true"><img src="assets/college-connect-students.png" alt=""></div>
+      <div class="welcome-foot"><span class="foot-flower">✿</span><span>Good things grow when we grow together.</span></div>
+    </section>
+
+    <section class="form-panel" aria-labelledby="form-title">
+      <div class="mobile-brand"><span class="mobile-cap">✦</span> College <b>Connect</b></div>
+      <div class="auth-card">
+        <div class="form-view active" id="signin-view">
+          <div class="card-heading"><span class="eyebrow">YOUR COMMUNITY IS HERE</span><h1 id="form-title">Sign in to <em>College Connect</em></h1><p>Pick up where your next great connection begins.</p></div>
+          <form id="signin-form" novalidate>
+            <label class="auth-field"><span class="sr-only">College email</span><span class="field-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><input id="signin-email" type="email" autocomplete="email" placeholder="Enter your college email" required></label>
+            <label class="auth-field"><span class="sr-only">Password</span><span class="field-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></span><input id="signin-password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="6" required><button type="button" class="show-password" aria-label="Show password" data-toggle-password="signin-password"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/><path d="m4 4 16 16" class="eye-slash"/></svg></button></label>
+            <div class="form-options"><label class="remember-option"><input id="remember-me" type="checkbox"><span class="custom-check"></span>Remember me</label><button type="button" class="text-button" id="forgot-link">Forgot password?</button></div>
+            <button class="primary-button" type="submit">Sign In <span>↗</span></button>
+          </form>
+          <div class="divider"><span></span><small>or continue with</small><span></span></div>
+          <button class="google-button" id="google-button" type="button"><span class="google-g">G</span>Continue with Google</button>
+          <p class="switch-view">Don't have an account? <button type="button" class="text-button" id="signup-link">Sign Up</button></p>
+          <p class="prototype-note">Sign in with the email and password you used to create your account.</p>
+        </div>
+
+        <div class="form-view" id="signup-view">
+          <div class="card-heading"><span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span><h1>Create your <em>account</em></h1><p>Join the people who make college feel a little smaller.</p></div>
+          <form id="signup-form" novalidate>
+            <label class="auth-field"><span class="sr-only">Full name</span><span class="field-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><input id="signup-name" type="text" autocomplete="name" placeholder="Your full name" required></label>
+            <label class="auth-field"><span class="sr-only">College email</span><span class="field-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><input id="signup-email" type="email" autocomplete="email" placeholder="Your college email" required></label>
+            <label class="auth-field"><span class="field-icon"><svg viewBox="0 0 24 24"><path d="M3 9 12 5l9 4-9 4-9-4Z"/><path d="M6 11v6c4 3 8 3 12 0v-6"/></svg></span><select id="signup-role" aria-label="Choose your role"><option value="junior">I'm a junior / student</option><option value="senior">I'm a senior</option><option value="alumni">I'm an alumnus</option></select></label>
+            <label class="auth-field"><span class="sr-only">Create password</span><span class="field-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><input id="signup-password" type="password" autocomplete="new-password" placeholder="Create a password (10+ characters)" minlength="10" required><button type="button" class="show-password" aria-label="Show password" data-toggle-password="signup-password"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/><path d="m4 4 16 16" class="eye-slash"/></svg></button></label>
+            <button class="primary-button signup-submit" type="submit">Create account <span>↗</span></button>
+          </form>
+          <p class="switch-view signup-switch">Already part of the community? <button type="button" class="text-button" id="signin-link">Sign In</button></p>
+            <p class="prototype-note">Your account is securely stored on this College Connect server.</p>
+        </div>
+
+        <div class="form-view profile-setup-view" id="profile-view">
+          <div class="card-heading"><span class="eyebrow">STEP 2 · YOUR COLLEGE STORY</span><h1>Complete your <em>profile</em></h1><p>A few details help the right people find and support you.</p></div>
+          <form id="complete-profile-form" novalidate>
+            <section class="profile-form-section"><div class="profile-section-heading"><span>01</span><div><b>Basic details</b><small>Tell your community who you are</small></div></div><div class="profile-fields-grid">
+              <label class="profile-input full-span">Full name<input id="profile-name" name="name" autocomplete="name" required minlength="2" placeholder="Your full name"></label>
+              <label class="profile-input">College email<input id="profile-email" name="email" type="email" readonly></label>
+              <label class="profile-input">I am a<select id="profile-role" name="role"><option value="junior">Junior / student</option><option value="senior">Senior</option><option value="alumni">Alumni</option></select></label>
+              <label class="profile-input">Phone number <small>Optional</small><input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210"></label>
+              <label class="profile-input full-span">Location <small>Optional</small><input name="location" placeholder="City, state"></label>
+            </div></section>
+            <section class="profile-form-section"><div class="profile-section-heading"><span>02</span><div><b>Education details</b><small>Your course and academic journey</small></div></div><div class="profile-fields-grid">
+              <label class="profile-input">College / university<input name="college" required placeholder="College or university name"></label>
+              <label class="profile-input">Degree / course<input name="degree" required placeholder="e.g. B.Tech, MBA"></label>
+              <label class="profile-input">Department / branch<input name="department" required placeholder="e.g. Computer Science"></label>
+              <label class="profile-input" id="study-year-wrap">Current year<input name="year" placeholder="e.g. Year 3"></label>
+              <label class="profile-input" id="graduation-wrap" hidden>Graduation year<input name="graduationYear" type="number" min="1980" max="2100" placeholder="e.g. 2023"></label>
+              <label class="profile-input" id="cgpa-wrap" hidden>CGPA <small>0–10 scale</small><input name="cgpa" type="number" min="0" max="10" step="0.01" placeholder="e.g. 8.4"></label>
+            </div></section>
+            <section class="profile-form-section"><div class="profile-section-heading"><span>03</span><div><b id="role-details-title">Your interests</b><small id="role-details-hint">Choose what you would like to learn</small></div></div><div class="profile-fields-grid">
+              <label class="profile-input full-span">Areas of interest / expertise <small>Separate with commas</small><input name="skills" placeholder="e.g. UI design, Python, data science"></label>
+              <label class="profile-input full-span" id="domain-wrap" hidden>Domains you have strong command of<input name="domains" placeholder="e.g. Machine learning, frontend development"></label>
+              <label class="profile-input" id="organization-wrap" hidden>Organization / company<input name="organization" placeholder="Where do you work?"></label>
+              <label class="profile-input" id="job-title-wrap" hidden>Job title / designation<input name="jobTitle" placeholder="e.g. Software Engineer"></label>
+              <label class="profile-input full-span" id="industry-wrap" hidden>Industry <small>Optional</small><input name="industry" placeholder="e.g. Technology, Finance, Design"></label>
+              <label class="profile-input full-span" id="experience-wrap" hidden>Work / project experience <small>Optional</small><textarea name="experience" rows="3" maxlength="500" placeholder="Projects, internships, research, or work you would like to share"></textarea></label>
+              <label class="profile-availability full-span" id="availability-wrap" hidden><input name="available" type="checkbox"><span><b>I'm open to mentoring requests</b><small>You can change your availability later.</small></span></label>
+              <label class="profile-input full-span">A short introduction <small>Optional</small><textarea name="introduction" rows="3" maxlength="360" placeholder="What are you working towards, or happy to help others with?"></textarea></label>
+            </div></section>
+            <p class="profile-form-feedback" id="profile-form-feedback" role="status" aria-live="polite"></p>
+            <button class="primary-button" type="submit">Save profile & continue <span>↗</span></button>
+          </form>
+          <p class="prototype-note">Your profile is saved in this browser for this prototype.</p>
+        </div>
+
+        <div class="form-view" id="forgot-view">
+          <div class="card-heading"><span class="eyebrow">WE'LL HELP YOU BACK IN</span><h1>Forgot your <em>password?</em></h1><p>Enter your college email and we’ll show you the next step.</p></div>
+          <form id="forgot-form" novalidate><label class="auth-field"><span class="sr-only">College email</span><span class="field-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><input id="forgot-email" type="email" placeholder="Enter your college email" required></label><button class="primary-button" type="submit">Continue <span>↗</span></button></form>
+          <div class="reset-message" id="reset-message" role="status" aria-live="polite"></div>
+          <p class="switch-view"><button type="button" class="text-button" id="back-signin">← Back to sign in</button></p>
+          <p class="prototype-note">Password recovery will be connected in a later step.</p>
+        </div>
+      </div>
+      <footer class="auth-footer"><span>© College Connect</span><span>Made for the journeys we share <b>✳</b></span></footer>
+    </section>
+  </main>
+  <div class="auth-toast" id="auth-toast" role="status" aria-live="polite"></div>
+  <script src="auth.js"></script>
+</body></html>
