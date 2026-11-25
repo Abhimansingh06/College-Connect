@@ -1,5 +1,6 @@
 # College Connect
 
+A senior, junior, and alumni networking system for mentorship, community questions, and career opportunities.
 College Connect is a responsive community app for juniors, senior students, alumni, and administrators.
 
 ## Run locally
@@ -14,9 +15,9 @@ Open `http://127.0.0.1:8000`. Without Supabase credentials the app uses its loca
 
 ## Connect the app to Supabase
 
-The project reference is `cfbaquhhnfyczgxwqqqn`. To switch the app from local JSON storage to this Supabase database:
+To switch the app from local JSON storage to this Supabase database:
 
-1. Apply [`supabase/schema.sql`](</C:/Users/asus/OneDrive/Documents/ChatGPT/New project/supabase/schema.sql>) once in the Supabase SQL Editor.
+1. Apply [`supabase/schema.sql`](supabase/schema.sql) once in the Supabase SQL Editor.
 2. Add `SUPABASE_URL=https://your-project.supabase.co` and `SUPABASE_SECRET_KEY=your-supabase-secret-key` to the ignored local `.env` file. Keep this secret server-side and out of browser code or source control.
 3. Restart `node server.js`. On first connection the app imports existing local users and community data if the Supabase tables are empty, then uses Supabase for subsequent reads and writes.
 
